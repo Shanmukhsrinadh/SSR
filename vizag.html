@@ -559,100 +559,6 @@
             cursor: pointer;
             font-size: 16px;
         }
-
-/* Responsive styles for screens less than 750px */
-@media (max-width: 750px) {
-    .map-keypoints-container {
-        flex-direction: column;
-        height: auto;
-        gap: 20px;
-    }
-    
-    .map-container,
-    .keypoints-container {
-        min-width: 100%;
-        height: auto;
-    }
-    
-    .map-container {
-        height: 300px; /* Fixed height for map */
-    }
-    
-    .keypoints-container {
-        padding: 20px;
-    }
-    
-    /* Adjust the location cards grid */
-    .location-cards-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    
-    /* Adjust hero section */
-    #visakhapatnam-hero {
-        height: 50vh;
-        padding-top: 60px;
-    }
-    
-    /* Make sure no horizontal scrolling */
-    body {
-        overflow-x: hidden;
-    }
-    
-    /* Adjust project cards */
-    .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-    
-    /* Adjust content sections */
-    .content-section {
-        padding: 20px;
-    }
-    
-    /* Hide some non-essential elements if needed */
-    .image-controls {
-        display: none;
-    }
-}        
-
-/* Add this at the top of your style section */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* Update your existing mobile media query */
-@media (max-width: 750px) {
-    /* Make sure all containers don't exceed viewport */
-    .container {
-        width: 95%;
-        padding: 0 10px;
-    }
-    
-    /* Ensure images don't cause overflow */
-    img, iframe {
-        max-width: 100%;
-    }
-    
-    /* Specifically fix the map iframe */
-    .map-container iframe {
-        width: 100% !important;
-    }
-    
-    /* Prevent any potential horizontal scroll from carousel */
-    .carousel-container {
-        overflow: hidden;
-    }
-    
-    /* Ensure project cards don't overflow */
-    .project-card {
-        width: 100%;
-    }
-}
-
-/* Add this to handle any edge cases */
-* {
-    box-sizing: border-box;
-}
     </style>
 </head>
 
@@ -914,17 +820,399 @@ html, body {
                 </div>
             </div>
 
-            <!-- Other location details sections would go here -->
+            <!-- Anandapuram Details -->
             <div id="anandapuram-details" class="location-details">
-                <!-- Content for Anandapuram -->
+                <div class="location-header">
+                    <h2 class="location-title">Anandapuram</h2>
+                    <button class="close-btn" onclick="hideLocation('anandapuram')">
+                        <i class="fas fa-times"></i> Close
+                    </button>
+                </div>
+
+                <!-- Map + Key Points Row -->
+                <div class="map-keypoints-container">
+                    <!-- Map Container -->
+                    <div class="map-container">
+                        <iframe title="Anandapuram Location" aria-label="Map" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3803.248859192423!2d83.21686431534863!3d17.60899898800085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39431389e6973f%3A0x92b9e1ec7a6e5a3f!2sAnandapuram%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                            scrolling="no" 
+                            frameborder="0" 
+                            style="width: 100%; height: 100%; border: none;"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <!-- Key Points Container -->
+                    <div class="keypoints-container">
+                        <h3 class="keypoints-title">Key Highlights</h3>
+                        <ul class="keypoints-list">
+                            <li>
+                                <strong>Strategic Location:</strong> Situated on the outskirts of Visakhapatnam with excellent connectivity to the city center.
+                            </li>
+                            <li>
+                                <strong>Industrial Growth:</strong> Proximity to major industries and upcoming industrial parks.
+                            </li>
+                            <li>
+                                <strong>Affordable Housing:</strong> Offers more affordable options compared to central Vizag locations.
+                            </li>
+                            <li>
+                                <strong>Infrastructure Development:</strong> New roads and utilities being developed to support growth.
+                            </li>
+                            <li>
+                                <strong>Future Potential:</strong> Expected to benefit from Vizag's expansion and development plans.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="projects-section">
+                    <h3 class="projects-title">Our Projects in Anandapuram</h3>
+
+                    <div class="projects-grid">
+                        <!-- Project 1: Anand Residency -->
+                        <div class="project-card" onclick="showProjectDetails('Anand Residency')">
+                            <img src="anand-residency-thumb.jpg" alt="Anand Residency" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Anand Residency</div>
+                                <div class="project-location">Anandapuram</div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: Green Valley -->
+                        <div class="project-card" onclick="showProjectDetails('Green Valley')">
+                            <img src="green-valley-thumb.jpg" alt="Green Valley" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Green Valley</div>
+                                <div class="project-location">Anandapuram</div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Sunshine Homes -->
+                        <div class="project-card" onclick="showProjectDetails('Sunshine Homes')">
+                            <img src="sunshine-homes-thumb.jpg" alt="Sunshine Homes" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Sunshine Homes</div>
+                                <div class="project-location">Anandapuram</div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: Urban Nest -->
+                        <div class="project-card" onclick="showProjectDetails('Urban Nest')">
+                            <img src="urban-nest-thumb.jpg" alt="Urban Nest" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Urban Nest</div>
+                                <div class="project-location">Anandapuram</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Sections -->
+                <div class="content-section">
+                    <div class="content-grid">
+                        <div>
+                            <h3 class="content-title">About Anandapuram</h3>
+                            <p>
+                                Anandapuram is an emerging residential and industrial area on the outskirts of Visakhapatnam.
+                                With its strategic location and affordable property prices, it's becoming an attractive option
+                                for homebuyers and investors. The area is witnessing steady growth with new infrastructure
+                                projects and commercial developments.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="content-title">Development Plans</h3>
+                            <p>
+                                The government has identified Anandapuram as a key growth area with plans for improved
+                                road connectivity, water supply, and other urban infrastructure. Several industrial units
+                                and residential projects are coming up, making it a promising location for long-term investment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-grid">
+                        <div>
+                            <h3 class="content-title">Investment Potential</h3>
+                            <p>
+                                Anandapuram offers excellent investment potential with property prices still relatively
+                                affordable compared to central Vizag locations. The area is expected to see steady appreciation
+                                as infrastructure improves and more development projects take shape in the coming years.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="content-title">Connectivity</h3>
+                            <p>
+                                Anandapuram is well-connected to Visakhapatnam city via NH16 and other major roads.
+                                The area is about 20km from the city center and has good public transportation links.
+                                Future road widening projects will further improve connectivity to the region.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <!-- Kothavalasa Details -->
             <div id="kothavalasa-details" class="location-details">
-                <!-- Content for Kothavalasa -->
+                <div class="location-header">
+                    <h2 class="location-title">Kothavalasa</h2>
+                    <button class="close-btn" onclick="hideLocation('kothavalasa')">
+                        <i class="fas fa-times"></i> Close
+                    </button>
+                </div>
+
+                <!-- Map + Key Points Row -->
+                <div class="map-keypoints-container">
+                    <!-- Map Container -->
+                    <div class="map-container">
+                        <iframe title="Kothavalasa Location" aria-label="Map" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.345858567335!2d83.1321023153473!3d17.51181299022835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3944a9e6b5a6d9%3A0x9a1e5b8e7c1d5e1f!2sKothavalasa%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                            scrolling="no" 
+                            frameborder="0" 
+                            style="width: 100%; height: 100%; border: none;"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <!-- Key Points Container -->
+                    <div class="keypoints-container">
+                        <h3 class="keypoints-title">Key Highlights</h3>
+                        <ul class="keypoints-list">
+                            <li>
+                                <strong>Railway Junction:</strong> Important railway station connecting Vizag to northern districts.
+                            </li>
+                            <li>
+                                <strong>Industrial Growth:</strong> Proximity to industrial areas and upcoming projects.
+                            </li>
+                            <li>
+                                <strong>Affordable Land:</strong> More affordable land prices compared to Vizag city.
+                            </li>
+                            <li>
+                                <strong>Strategic Location:</strong> Located on the Vizag-Vizianagaram corridor.
+                            </li>
+                            <li>
+                                <strong>Future Development:</strong> Expected to benefit from regional growth plans.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="projects-section">
+                    <h3 class="projects-title">Our Projects in Kothavalasa</h3>
+
+                    <div class="projects-grid">
+                        <!-- Project 1: Valley View -->
+                        <div class="project-card" onclick="showProjectDetails('Valley View')">
+                            <img src="valley-view-thumb.jpg" alt="Valley View" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Valley View</div>
+                                <div class="project-location">Kothavalasa</div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: Rail Heights -->
+                        <div class="project-card" onclick="showProjectDetails('Rail Heights')">
+                            <img src="rail-heights-thumb.jpg" alt="Rail Heights" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Rail Heights</div>
+                                <div class="project-location">Kothavalasa</div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Green Fields -->
+                        <div class="project-card" onclick="showProjectDetails('Green Fields')">
+                            <img src="green-fields-thumb.jpg" alt="Green Fields" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Green Fields</div>
+                                <div class="project-location">Kothavalasa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Sections -->
+                <div class="content-section">
+                    <div class="content-grid">
+                        <div>
+                            <h3 class="content-title">About Kothavalasa</h3>
+                            <p>
+                                Kothavalasa is a growing town located between Visakhapatnam and Vizianagaram, known for
+                                its railway junction. The area is seeing increased interest from investors due to its
+                                strategic location and relatively affordable property prices compared to Vizag city.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="content-title">Development Plans</h3>
+                            <p>
+                                With its railway connectivity and location on the Vizag-Vizianagaram corridor, Kothavalasa
+                                is expected to see infrastructure improvements and commercial development in the coming years.
+                                Several industrial and residential projects are planned for the area.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-grid">
+                        <div>
+                            <h3 class="content-title">Investment Potential</h3>
+                            <p>
+                                Kothavalasa offers good investment potential with land prices still reasonable compared to
+                                Vizag. The area is particularly attractive for those looking for long-term investments as
+                                the region develops and infrastructure improves.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="content-title">Connectivity</h3>
+                            <p>
+                                Kothavalasa's railway station provides excellent connectivity to Vizag and other parts of
+                                Andhra Pradesh. The town is also well-connected by road via NH16, making it easily accessible
+                                from both Visakhapatnam and Vizianagaram.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <!-- Thagarapuvalasa Details -->
             <div id="thagarapuvalasa-details" class="location-details">
-                <!-- Content for Thagarapuvalasa -->
+                <div class="location-header">
+                    <h2 class="location-title">Thagarapuvalasa</h2>
+                    <button class="close-btn" onclick="hideLocation('thagarapuvalasa')">
+                        <i class="fas fa-times"></i> Close
+                    </button>
+                </div>
+
+                <!-- Map + Key Points Row -->
+                <div class="map-keypoints-container">
+                    <!-- Map Container -->
+                    <div class="map-container">
+                        <iframe title="Thagarapuvalasa Location" aria-label="Map" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.372218360384!2d83.1769933153479!3d17.5609889891668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3944a9e6b5a6d9%3A0x9a1e5b8e7c1d5e1f!2sThagarapuvalasa%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                            scrolling="no" 
+                            frameborder="0" 
+                            style="width: 100%; height: 100%; border: none;"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <!-- Key Points Container -->
+                    <div class="keypoints-container">
+                        <h3 class="keypoints-title">Key Highlights</h3>
+                        <ul class="keypoints-list">
+                            <li>
+                                <strong>Industrial Proximity:</strong> Close to major industrial areas and upcoming projects.
+                            </li>
+                            <li>
+                                <strong>Affordable Options:</strong> Offers more affordable housing compared to city center.
+                            </li>
+                            <li>
+                                <strong>Strategic Location:</strong> Situated on the Vizag-Vizianagaram growth corridor.
+                            </li>
+                            <li>
+                                <strong>Infrastructure Growth:</strong> New roads and utilities being developed.
+                            </li>
+                            <li>
+                                <strong>Future Potential:</strong> Expected to benefit from regional development plans.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="projects-section">
+                    <h3 class="projects-title">Our Projects in Thagarapuvalasa</h3>
+
+                    <div class="projects-grid">
+                        <!-- Project 1: Industrial View -->
+                        <div class="project-card" onclick="showProjectDetails('Industrial View')">
+                            <img src="industrial-view-thumb.jpg" alt="Industrial View" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Industrial View</div>
+                                <div class="project-location">Thagarapuvalasa</div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: Valley Homes -->
+                        <div class="project-card" onclick="showProjectDetails('Valley Homes')">
+                            <img src="valley-homes-thumb.jpg" alt="Valley Homes" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Valley Homes</div>
+                                <div class="project-location">Thagarapuvalasa</div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Green Acres -->
+                        <div class="project-card" onclick="showProjectDetails('Green Acres')">
+                            <img src="green-acres-thumb.jpg" alt="Green Acres" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Green Acres</div>
+                                <div class="project-location">Thagarapuvalasa</div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: Urban Oasis -->
+                        <div class="project-card" onclick="showProjectDetails('Urban Oasis')">
+                            <img src="urban-oasis-thumb.jpg" alt="Urban Oasis" class="project-image">
+                            <div class="project-info">
+                                <div class="project-name">Urban Oasis</div>
+                                <div class="project-location">Thagarapuvalasa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Sections -->
+                <div class="content-section">
+                    <div class="content-grid">
+                        <div>
+                            <h3 class="content-title">About Thagarapuvalasa</h3>
+                            <p>
+                                Thagarapuvalasa is an emerging residential area located between Visakhapatnam and Vizianagaram.
+                                The area is gaining attention due to its proximity to industrial zones and relatively affordable
+                                property prices. With new infrastructure projects planned, it's becoming an attractive option
+                                for homebuyers and investors.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="content-title">Development Plans</h3>
+                            <p>
+                                Thagarapuvalasa is part of the Vizag-Vizianagaram growth corridor with several infrastructure
+                                improvements planned. The area is expected to benefit from industrial growth and improved
+                                connectivity to both cities, making it a promising location for real estate investment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-grid">
+                        <div>
+                            <h3 class="content-title">Investment Potential</h3>
+                            <p>
+                                Thagarapuvalasa offers good investment potential with property prices still reasonable compared
+                                to Vizag city. The area is particularly attractive for those looking for affordable options
+                                with potential for appreciation as the region develops.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="content-title">Connectivity</h3>
+                            <p>
+                                Thagarapuvalasa is well-connected by road via NH16, providing easy access to both Visakhapatnam
+                                and Vizianagaram. The area is about 25km from Vizag city center and has good public transportation
+                                links, with plans for further improvements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1066,26 +1354,188 @@ html, body {
     </footer>
 
     <script>
-// Prevent horizontal scrolling
-function preventHorizontalScroll() {
-    document.addEventListener('scroll', function() {
-        if (window.scrollX !== 0) {
-            window.scrollTo(0, window.scrollY);
+        // JavaScript functions to handle location toggling
+        function showLocation(locationId) {
+            // Hide all location details first
+            document.querySelectorAll('.location-details').forEach(el => {
+                el.classList.remove('location-active');
+            });
+            
+            // Show the selected location
+            document.getElementById(locationId + '-details').classList.add('location-active');
+            
+            // Scroll to the location details
+            document.getElementById(locationId + '-details').scrollIntoView({
+                behavior: 'smooth'
+            });
         }
-    });
-    
-    // Also check on resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth < 750 && window.scrollX !== 0) {
-            window.scrollTo(0, window.scrollY);
-        }
-    });
-}
 
-// Call the function when page loads
-window.onload = function() {
-    preventHorizontalScroll();
-};
+        function hideLocation(locationId) {
+            document.getElementById(locationId + '-details').classList.remove('location-active');
+        }
+
+        // Project details modal functions
+        function showProjectDetails(projectName) {
+            // Set project title
+            document.getElementById('project-modal-title').textContent = projectName;
+            
+            // Here you would typically fetch project details from an API or data object
+            // For now, we'll use placeholder content
+            document.getElementById('project-modal-description').textContent = 
+                'This is a premium residential project in ' + projectName.split(' ')[projectName.split(' ').length-1] + 
+                ' offering modern amenities and excellent connectivity.';
+                
+            // Set features list
+            const featuresList = document.getElementById('project-modal-features');
+            featuresList.innerHTML = '';
+            const features = [
+                'Gated community with 24/7 security',
+                'Landscaped gardens and parks',
+                'Clubhouse with gym and swimming pool',
+                'Power backup and water supply',
+                'Children\'s play area',
+                'Proximity to major landmarks'
+            ];
+            features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            // Set benefits
+            document.getElementById('project-modal-benefits').textContent = 
+                'This project offers excellent value for money with high-quality construction and premium amenities. ' +
+                'The location provides easy access to transportation hubs, schools, and shopping centers, making it ' +
+                'an ideal choice for families and investors alike.';
+                
+            // Set connectivity
+            const connectivityList = document.getElementById('project-connectivity');
+            connectivityList.innerHTML = '';
+            const connectivityPoints = [
+                'Close to major highways and roads',
+                'Public transportation available nearby',
+                'Easy access to schools and hospitals',
+                'Proximity to shopping and entertainment'
+            ];
+            connectivityPoints.forEach(point => {
+                const li = document.createElement('li');
+                li.textContent = point;
+                connectivityList.appendChild(li);
+            });
+            
+            // Set investment points
+            const investmentList = document.getElementById('project-investment');
+            investmentList.innerHTML = '';
+            const investmentPoints = [
+                'High appreciation potential',
+                'Rental demand in the area',
+                'Upcoming infrastructure projects nearby',
+                'Growing neighborhood'
+            ];
+            investmentPoints.forEach(point => {
+                const li = document.createElement('li');
+                li.textContent = point;
+                investmentList.appendChild(li);
+            });
+            
+            // Set map - this would be specific to each project in a real implementation
+            document.getElementById('project-map-iframe').src = 
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.372218360384!2d83.1769933153479!3d17.5609889891668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3944a9e6b5a6d9%3A0x9a1e5b8e7c1d5e1f!2sThagarapuvalasa%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin';
+            
+            // Show the modal
+            document.getElementById('project-details-modal').style.display = 'block';
+        }
+
+        function closeProjectDetails() {
+            document.getElementById('project-details-modal').style.display = 'none';
+        }
+
+        // Image zoom functionality
+        function adjustZoom(imageId, direction) {
+            const image = document.getElementById(imageId);
+            let currentScale = parseFloat(image.style.transform.replace('scale(', '').replace(')', '')) || 1;
+            
+            if (direction === 'in') {
+                currentScale += 0.1;
+            } else {
+                currentScale = Math.max(0.5, currentScale - 0.1);
+            }
+            
+            image.style.transform = `scale(${currentScale})`;
+        }
+
+        function resetZoom(imageId) {
+            document.getElementById(imageId).style.transform = 'scale(1)';
+        }
+
+        // Full image modal functions
+        function openFullImage(imageId) {
+            const src = document.getElementById(imageId).src;
+            document.getElementById('full-image-view').src = src;
+            document.getElementById('full-image-modal').style.display = 'flex';
+            resetModalZoom();
+        }
+
+        function closeFullImage() {
+            document.getElementById('full-image-modal').style.display = 'none';
+        }
+
+        function adjustModalZoom(direction) {
+            const image = document.getElementById('full-image-view');
+            let currentScale = parseFloat(image.style.transform.replace('scale(', '').replace(')', '')) || 1;
+            
+            if (direction === 'in') {
+                currentScale += 0.1;
+            } else {
+                currentScale = Math.max(0.5, currentScale - 0.1);
+            }
+            
+            image.style.transform = `scale(${currentScale})`;
+        }
+
+        function resetModalZoom() {
+            document.getElementById('full-image-view').style.transform = 'scale(1)';
+        }
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slideWidth = 250 + 20; // width + margin
+
+        function moveCarousel(direction) {
+            const track = document.getElementById('project-carousel-track');
+            const slides = track.children;
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+
+        // Initialize carousel with some images
+        function initCarousel() {
+            const track = document.getElementById('project-carousel-track');
+            track.innerHTML = '';
+            
+            // Add some sample images - in a real app these would come from project data
+            for (let i = 1; i <= 5; i++) {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                slide.innerHTML = `<img src="project-image-${i}.jpg" alt="Project Image ${i}">`;
+                track.appendChild(slide);
+            }
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            initCarousel();
+        };
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('project-details-modal')) {
+                closeProjectDetails();
+            }
+            if (event.target === document.getElementById('full-image-modal')) {
+                closeFullImage();
+            }
+        };
     </script>
 </body>
 
