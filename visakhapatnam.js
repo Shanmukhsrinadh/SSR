@@ -17,7 +17,7 @@
                 'Bhogapuram/image 4.jpg',
                 'Bhogapuram/image 5.jpg'
             ],
-            mapUrl: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3787.216276370513!2d83.4926000749956!3d18.05559998213847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDAzJzIwLjIiTiA4M8KwMjknNDIuNiJF!5e0!3m2!1sen!2sin!4v1712232482742!5m2!1sen!2sin',
+            mapUrl: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3600.7137198591063!2d83.495175!3d18.0556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDAzJzIwLjIiTiA4M8KwMjknNDIuNiJF!5e1!3m2!1sen!2sin!4v1743713727317!5m2!1sen!2sin',
             benefits: 'Aero Space offers a unique combination of modern living and investment potential. With the upcoming international airport just minutes away, residents will enjoy unparalleled connectivity while benefiting from the peaceful surroundings of Bhogapuram.',
             connectivity: [
                 '10 mins to proposed airport terminal',
@@ -300,7 +300,7 @@
     // Image Zoom Functionality
     function adjustZoom(imageId, direction) {
         const image = document.getElementById(imageId);
-        let currentScale = image.style.transform ? parseFloat(image.style.transform.replace('scale(', '').replace(')', '')) : 1;
+        let currentScale = image.dataset.scale ? parseFloat(image.dataset.scale) : 1;
         
         if (direction === 'in') {
             currentScale += 0.1;
@@ -309,11 +309,13 @@
         }
         
         image.style.transform = `scale(${currentScale})`;
+        image.dataset.scale = currentScale; // Store the scale value
     }
     
     function resetZoom(imageId) {
         const image = document.getElementById(imageId);
         image.style.transform = 'scale(1)';
+        image.dataset.scale = 1;
     }
     
     // Full Image Modal
